@@ -1,3 +1,6 @@
+user_login = None
+user_password = None
+
 while user_login != 'x' or user_password != 'y':
     print('Incorrect Login or Password', 'Try again')
     user_login = input('Login: ')
