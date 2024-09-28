@@ -1,21 +1,17 @@
-import subprocess
+from pathlib import Path
 
-user_login = input('Login: ')
-user_password = input('Password: ')
+user_login = None
+user_password = None
 
-if user_login == 'x' and user_password == 'y':
-
-    print('You are logged in')
-    subprocess.call(['C:\\Windows\\system32\\notepad.exe','C:\\Users\\user\\PycharmProjects\\1.python-code\\Mateusz-projects\\File_Exe_Password\\Computer Programming Exam Topics.txt'])
-
+while user_login != 'x' or user_password != 'y':
+    print('Incorrect Login or Password\nTry again')
+    user_login = input('Login: ')
+    user_password = input('Password: ')
 else:
+    print('You are logged in')
+    p = Path(__file__).with_name('Computer Programming Exam Topics.txt')
+    with p.open('r') as f:
+        print(f.read())
 
-    while user_login != 'x' or user_password != 'y':
-        print('Incorrect Login or Password', 'Try again')
-        user_login = input('Login: ')
-        user_password = input('Password: ')
-    else:
-        print('You are logged in')
 
-        subprocess.call(['C:\\Windows\\system32\\notepad.exe','\\C:\\Users\\user\\PycharmProjects\\1.python-code\\Mateusz-projects\\File_Exe_Password\\Computer Programming Exam Topics.txt'])
 
